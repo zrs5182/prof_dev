@@ -4,38 +4,27 @@ if __name__ == "__main__":
     # Vars
     chptrs = list()
     chptr_dscrpt = str()
-    prblm_dscrpts = dict()
+    prblms = list()
+
+    # Chapter 1 Problems
+    prblm_nmbr = 1
+    prblm_title = "Unpacking a Sequence into Spearate Variables"
+    prblm_dscrptn = "You have an N-element tuple or sequence that you would like to unpack into a collection of N variables."
+    sltn = "Use the assignment operator with the same number of variables on the left hand side \
+            as values in the structure you are tyring to unpack on the right."
+
+    dscssn = "Unpacking works with any object that is iterable. Some iterable types include: \
+            strings, files, iterators, and generators. Notes: _ is traditionally used as a throwaway variable."
+    code = "data = ['Acme', 50, 91.1, (2012, 12, 21) ]\
+            \n _, shares, price, _ = data"
+    # Add problem
+    prblms.append( Problem(prblm_nmbr, prblm_title, prblm_dscrptn, sltn, dscssn, code) )
 
     # Chapter 1 Description
     chptr_dscrpt = "Chapter 1: Data Structures and Algorithms"
-    prblm_dscrpts = {
-        1 : "Need N-element tuple or sequence to unpack into a collection of variables",
-        2 : "",
-        3 : "",
-        4 : "",
-        5 : "",
-        6 : "",
-        7 : "",
-        8 : "",
-        9 : "",
-        10 : "",
-        11 : "",
-        12 : "",
-        13 : "",
-        14 : "",
-        15 : "",
-        16 : "",
-        17 : "",
-        18 : "",
-        19 : "",
-        20 : "",
-        }
 
-    # Build Chapter 1 Object
-    chptr1 = Chapter(chptr_dscrpt, prblm_dscrpts )
-
-    # Add Chapter 1 to list of chapters
-    chptrs.append(chptr1)
+    # Add Chapter 1 Notes
+    chptrs.append( Chapter(chptr_dscrpt, prblms ) )
 
     # Create notes
     notes = Notes(chptrs)
