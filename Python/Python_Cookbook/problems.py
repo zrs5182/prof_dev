@@ -1,34 +1,4 @@
-class Chapter(object):
-    """ Chapter Object for organizing code and problems """
-    def __init__(self, description, problem_descriptions):
-        self.description = description
-        self.problem_descriptions = problem_descriptions
-
-    def __str__(self):
-        string = ""
-
-        # Print out Chapter Description
-        string = string + "---------- " + self.description + " ----------"+ '\n'
-
-        # Print out Problem Descriptions
-        for prob in self.problem_descriptions:
-            string = string + "Problem #" + str( prob ) + "\n"
-            string = string + "\t" + self.problem_descriptions[prob] + "\n"
-        return string
-
-class Notes(object):
-    """ Collection of chapters """
-    def __init__(self, chapters):
-        self.chapters = chapters
-
-    def __str__(self):
-        string = ""
-
-        # Output all the chapters
-        for chptr in self.chapters:
-            string = string + str(chptr) + '\n'
-
-        return string
+from notes_utils import *
 
 if __name__ == "__main__":
     # Vars
@@ -36,7 +6,7 @@ if __name__ == "__main__":
     chptr_dscrpt = str()
     prblm_dscrpts = dict()
 
-    # Chapter 1 Code
+    # Chapter 1 Description
     chptr_dscrpt = "Chapter 1: Data Structures and Algorithms"
     prblm_dscrpts = {
         1 : "Need N-element tuple or sequence to unpack into a collection of variables",
