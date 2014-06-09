@@ -1,6 +1,6 @@
 class Problem(object):
     """ Problems from the book """
-    def __init__(self, prblm_num, prblm_title,  prblm_dscrptn, sltn, dscssn, code):
+    def __init__(self, prblm_num, prblm_title,  prblm_dscrptn, sltn, dscssn, code=""):
         self.prblm_num = prblm_num
         self.prblm_title = prblm_title
         self.prblm_dscrptn = prblm_dscrptn
@@ -10,13 +10,14 @@ class Problem(object):
 
     def __str__(self):
         string = ""
-        string = string + "Problem #" +self. prblm_num + ": " + self.prblm_title + "\n"
+        string = string + "Problem #" + str(self.prblm_num) + ": " + self.prblm_title + "\n"
+        return string
 
 class Chapter(object):
     """ Chapter Object for organizing code and problems """
-    def __init__(self, description, problem_descriptions):
+    def __init__(self, description, problems):
         self.description = description
-        self.problem_descriptions = problem_descriptions
+        self.problems = problems
 
     def __str__(self):
         string = ""
@@ -25,9 +26,8 @@ class Chapter(object):
         string = string + "---------- " + self.description + " ----------"+ '\n'
 
         # Print out Problem Descriptions
-        for prob in self.problem_descriptions:
-            string = string + "Problem #" + str( prob ) + "\n"
-            string = string + "\t" + self.problem_descriptions[prob] + "\n"
+        for prob in self.problems:
+            string = string + str(prob) +  "\n"
         return string
 
 class Notes(object):
